@@ -1,8 +1,12 @@
 import tkinter as tk
 from tkinter import *
 class Tabuleiro:
-	def __init__ (self):
-		self.button = botao
+	def __init__ (self, botao):
+		self.botao = botao
+	def selec_x():
+		
+		
+	def selec_o():
 		
 		
 		
