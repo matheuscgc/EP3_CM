@@ -1,3 +1,4 @@
+from tkinter import *
 import tkinter as tk
 class Tabuleiro:
 	def __init__ (self):
@@ -8,7 +9,7 @@ class Tabuleiro:
 		botao1.config(height=10, width=20)
 		#botao1.configure(command=selec_x)
 		#botao1["text"]="X"
-		botao1.bind("<Button-1>",selec_x)
+		#botao1.bind("<Button-1>",escolha)
 
 		botao2=tk.Button(self.window)
 		botao2.grid(row=0, column=1)
@@ -41,20 +42,27 @@ class Tabuleiro:
 		botao9=tk.Button(self.window)
 		botao9.grid(row=2, column=2)
 		botao9.config(height=10, width=20)
+		
+		prox_jogada=Label(self.window, text="Próxima jogada: ")
+		prox_jogada.grid(row=3)
 
 	def iniciar(self):
 		self.window.mainloop()
 
-	def selec_x(event):
+	"""def selec_x(event):
 		#["text"]="X"
-		
+		return False
 		
 	def selec_o(event):
 		#["text"]="O"
-	
+		return False
 	
 	def escolha(self):
-		return False
+		if player == "x":
+			return False
+		else:
+			return False"""
+			
 
 jogo=Tabuleiro()
 jogo.iniciar()
