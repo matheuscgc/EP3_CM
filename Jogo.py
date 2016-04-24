@@ -30,12 +30,45 @@ se o jogo teriminar:
         reinicia o jogo
         mantém a vez do jogador'''
         
-     
-def recebe_jogada(linha,coluna):
+class Jogo: 
+    
+    game = [[0,0,0],[0,0,0],[0,0,0]]
+    log = []
+    
+    def __init__(self, jogador):
+        self.jogador = jogador
+        
+        
+        
+    def recebe_jogada(self,linha,coluna):
+        x = len(self.log)
+        if self.log[x-1] == 'O':
+            self.game[linha][coluna] = 'X'
+            self.log.append('X')
+        elif self.log[x] == 'X': 
+            self.game[linha][coluna] = 'O'
+            self.log.append('O')
+        else:
+            self.game[linha][coluna] = self.log[x-1]
+            self.log.append(self.log[x-1])
+        return self.log
     
     #importar jogada do tabuleiro?
     game[linha][coluna] = Jogo(jogador) 
     
+    def verifica_ganhador(self):
+        for i in range(len(self.game)):
+            if self.game[i][0] == self.game[i][1] and self.game[i][0] == self.game[i][2] and self.game[i][2] == self.game[i][1]:
+                if self.game[i][0] == 'X':
+                    return 1
+                else:
+                    return 2
+                
+
+                
+    
+    def limpa_jogadas(self): 
+        return 
      
     
     
