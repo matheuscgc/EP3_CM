@@ -53,17 +53,35 @@ class Jogo:
             self.log.append(self.log[x-1])
         return self.log
     
-    #importar jogada do tabuleiro?
-    game[linha][coluna] = Jogo(jogador) 
     
     def verifica_ganhador(self):
+        
         for i in range(len(self.game)):
-            if self.game[i][0] == self.game[i][1] and self.game[i][0] == self.game[i][2] and self.game[i][2] == self.game[i][1]:
-                if self.game[i][0] == 'X':
+            if self.game[0][i] == self.game[1][i] and self.game[0][i] == self.game[2][i]:
+                if self.game[0][i] == 'X':
                     return 1
-                else:
-                    return 2
+                elif self.game[i][0] == 'O':
+                    return      
+            elif self.game[i] == ['X','X','X']:
+                return 1
+            elif self.game[i] == ['O','O','O']:
+                return 2
                 
+                
+        if self.game[0][0] == self.game[1][1] and self.game[0][0] == self.game[2][2]:
+            if self.game[0][0] == 'X':
+                return 1
+            elif self.game[0][0] == 'O':
+                return 2
+        elif self.game[0][2] == self.game[1][1] and self.game[0][2] == self.game[2][0]:
+            if self.game[0][2] == 'X':
+                return 1
+            elif self.game[0][2] == 'O':
+                return 2
+        elif len(self.log) == 9:
+            return 0
+        else:
+            return -1
 
                 
     
