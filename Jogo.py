@@ -38,23 +38,23 @@ class Jogo():
                 return 1
             elif self.game[i] == ['O','O','O']:
                 return 2
-#            else:
-#                return -1
+            else:
+                return -1
                 
         if self.game[0][0] == self.game[1][1] and self.game[0][0] == self.game[2][2]:
             if self.game[0][0] == 'X':
                 return 1
             elif self.game[0][0] == 'O':
                 return 2
-#            else:
-#                return -1
+            else:
+                return -1
         elif self.game[0][2] == self.game[1][1] and self.game[0][2] == self.game[2][0]:
             if self.game[0][2] == 'X':
                 return 1
             elif self.game[0][2] == 'O':
                 return 2
-#            else:
-#                return -1
+            else:
+                return -1
         elif self.n_zeros == 0:
             return 0
         else:
